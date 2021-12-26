@@ -1,0 +1,47 @@
+@use '../abstracts' as a;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* base styles */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  font-size: 1.6em;
+  box-sizing: border-box;
+}
+
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  background: none;
+  border: 2px solid a.$primary-color;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: a.$primary-color;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+
+  &:hover {
+    background: a.$primary-color;
+    color: a.$white-color;
+  }
+}
