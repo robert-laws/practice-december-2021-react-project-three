@@ -4,10 +4,57 @@ main {
   width: 100%;
 }
 
+.layout-1200 {
+  @include a.centered-layout-frame(1200px, 2rem);
+}
+
+.layout-960 {
+  @include a.centered-layout-frame(960px, 2rem);
+}
+
 .btn {
   @include a.button(a.$primary-color, a.$white-color);
 }
 
-.layout-1200 {
-  @include a.centered-layout-frame(1200px, 2rem);
+// navbar component
+.navbar {
+  width: 100%;
+  background: darken(a.$secondary-color, 35%);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    @include a.centered-layout-frame(960px, 0);
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .title {
+      font-weight: bold;
+      letter-spacing: 1px;
+
+      a {
+        font-size: 2rem;
+
+        &:hover {
+          color: darken(a.$secondary-color, 75%);
+        }
+      }
+    }
+
+    a {
+      font-size: 1.7rem;
+      color: a.$white-color;
+      text-decoration: none;
+
+      &:hover {
+        color: a.$secondary-color;
+      }
+    }
+  }
 }

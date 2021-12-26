@@ -1,9 +1,8 @@
 export const Home = () => {
   return (
     <main>
-      <div className='layout-1200'>
+      <div className='layout-960'>
         <h1>Home</h1>
-        <button className='btn'>Click Here</button>
       </div>
     </main>
   );
