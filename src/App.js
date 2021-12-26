@@ -1,9 +1,18 @@
 import './sass/main.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home, Login, NotFound, Signup } from './pages';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>App</h1>
+    <div className='app'>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
