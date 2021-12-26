@@ -32,3 +32,42 @@ h6 {
 ul {
   list-style-type: none;
 }
+
+// base form
+.form {
+  @include a.centered-layout-frame(360px, 6rem);
+  padding: 2rem;
+
+  label {
+    display: block;
+    margin: 3rem auto;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+
+  input {
+    padding: 8px 6px;
+    font-size: 1.6rem;
+    color: a.$gray-color;
+    background-color: a.$white-color;
+    width: 100%;
+  }
+}
+
+// base layouts
+.layout-1200 {
+  @include a.centered-layout-frame(1200px, 2rem);
+}
+
+.layout-960 {
+  @include a.centered-layout-frame(960px, 2rem);
+}
+
+// base button
+.btn {
+  @include a.button(a.$primary-color);
+}

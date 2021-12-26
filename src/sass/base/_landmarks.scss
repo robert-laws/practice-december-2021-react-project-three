@@ -4,20 +4,8 @@ main {
   width: 100%;
 }
 
-.layout-1200 {
-  @include a.centered-layout-frame(1200px, 2rem);
-}
-
-.layout-960 {
-  @include a.centered-layout-frame(960px, 2rem);
-}
-
-.btn {
-  @include a.button(a.$primary-color, a.$white-color);
-}
-
 // navbar component
-.navbar {
+header.navbar {
   width: 100%;
   background: darken(a.$secondary-color, 35%);
   padding: 2rem 1rem;
