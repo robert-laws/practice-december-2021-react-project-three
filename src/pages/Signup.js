@@ -8,7 +8,7 @@ export const Signup = () => {
     password: '',
   });
 
-  const [error, isPending, signupUser] = useSignup();
+  const [signupUser, error, isPending] = useSignup();
 
   const handleChange = (e) => {
     setSignup({

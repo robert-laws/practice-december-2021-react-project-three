@@ -72,6 +72,10 @@ ul {
   @include a.button(a.$primary-color);
 }
 
+.btn-secondary {
+  @include a.button(darken(a.$secondary-color, 60%));
+}
+
 // base state styles
 .error {
   color: a.$error-color;
