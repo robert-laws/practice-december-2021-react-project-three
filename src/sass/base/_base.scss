@@ -71,3 +71,8 @@ ul {
 .btn {
   @include a.button(a.$primary-color);
 }
+
+// base state styles
+.error {
+  color: a.$error-color;
+}
