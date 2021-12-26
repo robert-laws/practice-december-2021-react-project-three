@@ -1,11 +1,13 @@
 @use '../abstracts' as a;
 
-.app {
-  height: 100vh;
-  width: 100vw;
-  background-color: lighten(a.$secondary-color, 4%);
-}
-
 main {
   width: 100%;
+}
+
+.btn {
+  @include a.button(a.$primary-color, a.$white-color);
+}
+
+.layout-1200 {
+  @include a.centered-layout-frame(1200px, 2rem);
 }

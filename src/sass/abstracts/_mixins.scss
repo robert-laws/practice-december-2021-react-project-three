@@ -1,0 +1,21 @@
+@use './variables' as v;
+
+@mixin button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: v.$base-border-radius;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+
+  &:hover {
+    background-color: darken($bg-color, 5%);
+    color: $text-color;
+  }
+}
+
+@mixin centered-layout-frame($width, $vertical-margin) {
+  max-width: $width;
+  margin: $vertical-margin auto;
+}
