@@ -1,14 +1,16 @@
 import { useState } from 'react';
+import { useLogin } from '../hooks/useLogin';
 
 export const Login = () => {
-  const [login, setLogin] = useState({
+  const [loginDetails, setLoginDetails] = useState({
     email: '',
     password: '',
   });
+  const [login, error, isPending] = useLogin();
 
   const handleChange = (e) => {
-    setLogin({
-      ...login,
+    setLoginDetails({
+      ...loginDetails,
       [e.target.name]: e.target.value,
     });
   };
@@ -16,7 +18,7 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(login);
+    login(loginDetails.email, loginDetails.password);
   };
 
   return (
@@ -29,7 +31,7 @@ export const Login = () => {
             id='email'
             type='email'
             name='email'
-            value={login.email}
+            value={loginDetails.email}
             onChange={handleChange}
           />
         </label>
@@ -39,11 +41,17 @@ export const Login = () => {
             id='password'
             type='password'
             name='password'
-            value={login.password}
+            value={loginDetails.password}
             onChange={handleChange}
           />
         </label>
-        <button className='btn'>Login</button>
+        {!isPending && <button className='btn'>Login</button>}
+        {isPending && (
+          <button className='btn' disabled>
+            Loading...
+          </button>
+        )}
+        {error && <p className='error'>{error}</p>}
       </form>
     </main>
   );

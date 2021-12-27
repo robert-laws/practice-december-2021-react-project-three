@@ -12,7 +12,9 @@ header.navbar {
   box-sizing: border-box;
 
   nav {
+    height: 50px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     @include a.centered-layout-frame(960px, 0);
 
