@@ -1,11 +1,11 @@
 import './sass/main.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Login, NotFound, Signup } from './pages';
-import { Navbar } from './components';
+import { Navbar, PrivateRoute } from './components';
 import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
-  const { authIsReady } = useAuthContext();
+  const { authIsReady, user } = useAuthContext();
 
   return (
     <div className='app'>
@@ -14,8 +14,22 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
+            <Route
+              path='/login'
+              element={
+                <PrivateRoute user={user}>
+                  <Login />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path='/signup'
+              element={
+                <PrivateRoute user={user}>
+                  <Signup />
+                </PrivateRoute>
+              }
+            />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Router>
