@@ -1,6 +1,6 @@
 import './sass/main.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Login, NotFound, Signup } from './pages';
+import { Home, Transaction, Login, NotFound, Signup } from './pages';
 import { Navbar, PrivateRoute } from './components';
 import { useAuthContext } from './hooks/useAuthContext';
 
@@ -27,6 +27,14 @@ function App() {
               element={
                 <PrivateRoute user={user}>
                   <Signup />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path='/transaction'
+              element={
+                <PrivateRoute user={!user}>
+                  <Transaction />
                 </PrivateRoute>
               }
             />

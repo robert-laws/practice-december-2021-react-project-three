@@ -13,10 +13,6 @@ export const Navbar = () => {
           <Link to='/'>Money App</Link>
         </div>
         <ul>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-
           {!user && (
             <>
               <li>
@@ -28,9 +24,17 @@ export const Navbar = () => {
             </>
           )}
 
+          {user && <li className='hello-text'>user: {user.displayName}</li>}
+
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+
           {user && (
             <>
-              <li>hello, {user.displayName}</li>
+              <li>
+                <Link to='/transaction'>Transaction</Link>
+              </li>
               <li>
                 <button className='btn-secondary' onClick={() => logout()}>
                   Logout

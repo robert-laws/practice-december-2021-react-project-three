@@ -1,0 +1,92 @@
+@use '../abstracts' as a;
+
+.transaction {
+  // $self: &;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 960px;
+  margin: 6rem auto;
+  gap: 6rem;
+
+  h3 {
+    color: a.$primary-color;
+    margin-bottom: 2rem;
+  }
+
+  &-list {
+    li {
+      margin: 3rem auto;
+      border: 1px solid lighten(a.$gray-color, 35%);
+      box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid a.$primary-color;
+    }
+
+    .name {
+      display: inline-block;
+      color: a.$gray-color;
+      font-size: 1.8rem;
+    }
+
+    .amount {
+      margin-left: 1rem;
+      display: inline-block;
+      color: a.$gray-color;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    button {
+      @include a.button(a.$error-color);
+    }
+  }
+
+  &-form {
+    form {
+      width: 100%;
+      padding: 2rem;
+      background: lighten(a.$primary-color, 6%);
+      border-radius: 1rem;
+    }
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      margin-top: 8px;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: a.$base-border-radius;
+
+      &::placeholder {
+        color: lighten(a.$gray-color, 20%);
+      }
+    }
+
+    label {
+      margin: 0 auto 2rem;
+      display: block;
+      color: a.$white-color;
+    }
+
+    button {
+      @include a.button(a.$primary-color);
+      width: 100%;
+    }
+
+    aside {
+      margin-top: 4rem;
+      color: a.$gray-color;
+
+      li {
+        margin: 1rem;
+      }
+    }
+  }
+}
